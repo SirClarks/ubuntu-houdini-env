@@ -30,14 +30,17 @@ export SHOT=$SHOT
 export JOB=$JOB
 export USER=$USER
 export FULLPATH=$HPATH
-export GEO="$HPATH/geo/fx/$USER/"
-export RENDER="$HPATH/render/fx/$USER/"
+export HIP="$HPATH/houdini/hip/"
+export GEO="$HPATH/houdini/geo/"
+export RENDER="$HPATH/houdini/render/"
+export TEXTURE="$HPATH/houdini/texture/"
 
 # set preferences
 export HOUDINI_NO_START_PAGE_SPLASH=1
 export HOUDINI_VERBOSE_ERROR=1
 export HOUDINI_DISABLE_SAVE_THUMB=1
 export HOUDINI_SIMPLIFIED_NODE_NAMES=1
+export HOUDINI_BACKUP_DIR="$HPATH/hip/backup/"
 
 # per job overrides
 if [ $JOB == 'rnd' ]
