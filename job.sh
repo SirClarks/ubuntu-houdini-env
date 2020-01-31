@@ -32,7 +32,7 @@ export USER=$USER
 export FULLPATH=$HPATH
 export HIP="$HPATH/houdini/hip/"
 export GEO="$HPATH/houdini/geo/"
-export RENDER="$HPATH/houdini/render/"
+export RENDER="$HPATH/houdini/renders/"
 export TEXTURE="$HPATH/houdini/texture/"
 
 # set preferences
