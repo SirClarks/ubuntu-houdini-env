@@ -8,3 +8,6 @@ alias setenv='source ~/Scripts/houdini/houdini_setup_bash' # manually set env
 
 # alias to launch houdini
 alias h='houdini -n -foreground' # open houdini must have env set
+
+# aliases for Nuke
+alias nk='/opt/Nuke/Nuke12.2v1/Nuke12.2 --nc'
