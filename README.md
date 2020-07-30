@@ -1,7 +1,6 @@
 # ubuntu-houdini-env
 A simplified production-like home environment setup for houdini/nuke workflow on Linux (specifically Ubuntu 18.04/20.04). This is an extremely simple setup; however, it should be a useful starting place for your own ideas and improvements. 
 
-# Setup Walkthrough
 ## Introduction
 This guide is aimed at those who are very new to the world of linux and just in general don’t fiddle too much with theirs. If you know what you’re doing feel free to change the paths to satisfy your needs. 
 
