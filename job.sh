@@ -8,7 +8,7 @@ fi
 
 JOB=${1?Error: no job name given}
 SHOT=${2?Error: no shot given}
-HPATH=/media/$USER/data/FX/jobs/$JOB/$SHOT/
+HPATH=$HOME/FX/PROJECTS/$JOB/$SHOT/
 
 
 if cd $HPATH; then
@@ -26,7 +26,7 @@ echo "Project path set to: $HPATH"
 source ~/Scripts/houdini/houdini_setup_bash
 
 # set variable paths
-export SHOT=$SHOT 
+export SHOT=$SHOT
 export JOB=$JOB
 export USER=$USER
 export FULLPATH=$HPATH

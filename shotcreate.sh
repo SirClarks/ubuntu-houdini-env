@@ -8,14 +8,14 @@ fi
 
 JOB=${1?Error: no job name given}
 SHOT=${2?Error: no shot name given}
-JPATH=/media/$USER/data/FX/jobs/$JOB
+JPATH=$HOME/FX/PROJECTS/$JOB
 SPATH=$JPATH/$SHOT
 if cd $JPATH; then
 	if cd $SPATH; then
 		echo "Error: shot already exists"
-		exit 1	
+		exit 1
 	else
-		echo "No matching shot found, creating new shot" 
+		echo "No matching shot found, creating new shot"
 		mkdir $SPATH
 		HPATH=$SPATH/houdini
 		NPATH=$SPATH/nuke
@@ -23,7 +23,6 @@ if cd $JPATH; then
 		mkdir $NPATH $NPATH/scene $NPATH/scene/backup $NPATH/renders
 	fi
 else
-	echo "Error: Job name not found, if needed run jobcreate to create a job" 1>&2	
-	exit 1	
+	echo "Error: Job name not found, if needed run jobcreate to create a job" 1>&2
+	exit 1
 fi
-
