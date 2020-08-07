@@ -18,6 +18,7 @@ For Nuke it’s the exact same procedure, just unpack the downloaded file just a
 ### Aliases
 Think of aliases as cool little shortcut commands you can type in the terminal to perform whatever you need, so we’re going to set these up next. There are arguably better ways of doing this, but we’re going for simplicity here you’ll want to open edit your `.bashrc` which should be in your Home directory. You can directly edit it using this command `sudo gedit ~/.bashrc`
 
+## (Update) Aug 7th, 2020 - WIP, will pick this up again and finish this guide once I find some more freetime.
 
 
 
