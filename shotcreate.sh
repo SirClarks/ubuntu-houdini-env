@@ -19,7 +19,7 @@ if cd $JPATH; then
 		mkdir $SPATH
 		HPATH=$SPATH/houdini
 		NPATH=$SPATH/nuke
-		mkdir $HPATH $HPATH/hip $HPATH/hip/backup $HPATH/geo $HPATH/renders $HPATH/texture $HPATH/flipbook
+		mkdir $HPATH $HPATH/hip $HPATH/hip/backup $HPATH/geo $HPATH/renders $HPATH/texture $HPATH/flipbook $HPATH/assets
 		mkdir $NPATH $NPATH/scene $NPATH/scene/backup $NPATH/renders
 	fi
 else
