@@ -6,6 +6,10 @@ if [ "$1" == "-h" ] || [ "$1" == "--help" ]; then
   exit 0
 fi
 
+# A lot of optionals here just go through and edit for what you need.
+# For example there are a lot of directories related to Nuke/Resolve or
+# other more specific directories such as hip/log.
+
 JOB=${1?Error: no job name given}
 SHOT=${2?Error: no shot name given}
 JPATH=$HOME/FX/PROJECTS/$JOB
@@ -19,9 +23,11 @@ if cd $JPATH; then
 		mkdir $SPATH
 		HPATH=$SPATH/houdini
 		NPATH=$SPATH/nuke
-		mkdir $HPATH $HPATH/hip $HPATH/hip/backup $HPATH/geo $HPATH/renders $HPATH/texture $HPATH/flipbook $HPATH/assets
+    RPATH=$SPATH/resolve
+		mkdir $HPATH $HPATH/hip $HPATH/hip/backup $HPATH/hip/log $HPATH/geo $HPATH/renders $HPATH/texture $HPATH/flipbook $HPATH/assets
 		mkdir $NPATH $NPATH/scene $NPATH/scene/backup $NPATH/renders
-	fi
+    mkdir $RPATH $RPATH/backup
+  fi
 else
 	echo "Error: Job name not found, if needed run jobcreate to create a job" 1>&2
 	exit 1
