@@ -18,8 +18,8 @@ if [ "$1" == "-l" ] || [ "$1" == "-l -l" ]; then
   LAST=$( tail -n 1 $HOME/FX/UTILITY/ENV/history.txt )
   echo "loading last shot: $LAST"
   read -r -a array <<< "$LAST"
-  JOB=${array[0]}
-  SHOT=${array[1]}
+  JOB=${array[1]}
+  SHOT=${array[2]}
   echo "debug JOB is $JOB and shot is $SHOT"
 else
   JOB=${1?Error: no job name given}
@@ -83,6 +83,6 @@ if [[ ! -e $HOME/FX/UTILITY/ENV/history.txt ]]; then
   echo "no history log found, created log at $HOME/FX/UTILITY/ENV/history.txt"
 fi
 
-echo "$JOB $SHOT" >> $HOME/FX/UTILITY/ENV/history.txt
+echo "job $JOB $SHOT" >> $HOME/FX/UTILITY/ENV/history.txt
 
 $SHELL
