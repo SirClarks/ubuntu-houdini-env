@@ -1,5 +1,16 @@
 #!/bin/bash
 
+# Source config settings, point this at your config.sh file
+source $HOME/Scripts/houdini/config.sh
+
+# if error on source config
+if [ $? -eq 0 ]; then
+    echo Config.sh loaded
+else
+    echo -e "\n-----CONFIG ERROR-----\nCannot find config.sh doublecheck the filepath \nand/or check config.sh for any typos"
+    exit 0
+fi
+
 # help check
 if [ "$1" == "-h" ] || [ "$1" == "--help" ]; then
   echo "Usage: "shotcreate" [name of job] [new shot name]"
@@ -12,7 +23,7 @@ fi
 
 JOB=${1?Error: no job name given}
 SHOT=${2?Error: no shot name given}
-JPATH=$HOME/FX/PROJECTS/$JOB
+JPATH=$PROJPATH/$JOB
 SPATH=$JPATH/$SHOT
 if cd $JPATH; then
 	if cd $SPATH; then

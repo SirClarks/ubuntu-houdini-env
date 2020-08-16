@@ -1,5 +1,16 @@
 #!/bin/bash
 
+# Source config settings, point this at your config.sh file
+source $HOME/Scripts/houdini/config.sh
+
+# if error on source config
+if [ $? -eq 0 ]; then
+    echo Config.sh loaded
+else
+    echo -e "\n-----CONFIG ERROR-----\nCannot find config.sh doublecheck the filepath \nand/or check config.sh for any typos"
+    exit 0
+fi
+
 # help check
 if [ "$1" == "-h" ] || [ "$1" == "--help" ]; then
   echo "Usage: "job" [job name] [shotname]"
@@ -9,13 +20,13 @@ fi
 # history check
 if [ "$1" == "-hh" ] || [ "$1" == "-history" ] || [ "$1" == "--history" ]; then
   echo "Last 20 Shots: "
-  echo "`tail -n 15 $HOME/FX/UTILITY/ENV/history.txt`"
+  echo "`tail -n 15 $UTILPATH/ENV/history.txt`"
   exit 0
 fi
 
 # last job/shot load via history.txt else use the two typed arguments
-if [ "$1" == "-l" ] || [ "$1" == "-l -l" ]; then
-  LAST=$( tail -n 1 $HOME/FX/UTILITY/ENV/history.txt )
+if [ "$1" == "-l" ] || [ "$1" == "-l -l" ] || [ "$1" == "--last" ]; then
+  LAST=$( tail -n 1 $UTILPATH/ENV/history.txt )
   echo "loading last shot: $LAST"
   read -r -a array <<< "$LAST"
   JOB=${array[1]}
@@ -33,7 +44,7 @@ if [ -z "$JOB" ] || [ -z "$SHOT" ]; then
 fi
 
 # set main path
-HPATH=$HOME/FX/PROJECTS/$JOB/$SHOT/
+HPATH=$PROJPATH/$JOB/$SHOT/
 
 if cd $HPATH; then
   echo "Entering $JOB/$SHOT"
@@ -47,7 +58,7 @@ echo "Shot set to: $SHOT"
 echo "Project path set to: $HPATH"
 
 # set env
-source ~/Scripts/houdini/houdini_setup_bash
+source $HENVPATH
 
 # set variable paths
 export SHOT=$SHOT
@@ -78,11 +89,11 @@ else
 fi
 
 # write to file for history
-if [[ ! -e $HOME/FX/UTILITY/ENV/history.txt ]]; then
-  touch $HOME/FX/UTILITY/ENV/history.txt
+if [[ ! -e $UTILPATH/ENV/history.txt ]]; then
+  mkdir -p $UTILPATH/ENV/ && touch $UTILPATH/ENV/history.txt
   echo "no history log found, created log at $HOME/FX/UTILITY/ENV/history.txt"
 fi
 
-echo "job $JOB $SHOT" >> $HOME/FX/UTILITY/ENV/history.txt
+echo "job $JOB $SHOT" >> $UTILPATH/ENV/history.txt
 
 $SHELL
