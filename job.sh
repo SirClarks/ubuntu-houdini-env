@@ -1,11 +1,11 @@
 #!/bin/bash
 
 # Source config settings, point this at your config.sh file
-source $HOME/Scripts/houdini/config.sh
+source $HOME/Scripts/houdini/env/config.sh
 
 # if error on source config
 if [ $? -eq 0 ]; then
-    echo Config.sh loaded
+    echo "Config.sh loaded"
 else
     echo -e "\n-----CONFIG ERROR-----\nCannot find config.sh doublecheck the filepath \nand/or check config.sh for any typos"
     exit 0
@@ -31,7 +31,6 @@ if [ "$1" == "-l" ] || [ "$1" == "-l -l" ] || [ "$1" == "--last" ]; then
   read -r -a array <<< "$LAST"
   JOB=${array[1]}
   SHOT=${array[2]}
-  echo "debug JOB is $JOB and shot is $SHOT"
 else
   JOB=${1?Error: no job name given}
   SHOT=${2?Error: no shot given}

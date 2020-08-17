@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # Source config settings, point this at your config.sh file
-source $HOME/Scripts/houdini/config.sh
+source $HOME/Scripts/houdini/env/config.sh
 
 # if error on source config
 if [ $? -eq 0 ]; then
