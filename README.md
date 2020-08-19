@@ -7,7 +7,8 @@ This guide is aimed at those who are very new to the world of Linux and Ubuntu a
 ## Software download
 
 ### Houdini
-Make sure you download Houdini for Linux and follow the SideFX provided [instructions](https://www.sidefx.com/download/houdini-for-linux/
+Make sure you download Houdini for Linux and follow the SideFX provided [https://www.sidefx.com/download/houdini-for-linux/](instructions)
+or maybe try [https://www.sidefx.com/faq/question/511/](this specific linux FAQ question)
 
 The default installation options and location being in `/opt/` should be fine. Don’t forget to delete the installer after you’re done.
 
