@@ -9,4 +9,4 @@ HENVPATH=$HOME/FX/UTILITY/ENV/houdini_setup_bash
 UTILPATH=$HOME/FX/UTILITY/
 
 # Change this to the directory where you want archived jobs to go to
-ARCHPATH=media/kennyc/mass/FX/ARCHIVE/
+ARCHPATH=$HOME/FX/ARCHIVE/
