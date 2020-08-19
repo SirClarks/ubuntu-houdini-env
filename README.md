@@ -8,9 +8,13 @@ This guide is aimed at those who are very new to the world of Linux and Ubuntu a
 
 ### Houdini
 Make sure you download Houdini for Linux and follow the SideFX provided [instructions](https://www.sidefx.com/download/houdini-for-linux/)
-or maybe try [this specific linux FAQ question.](https://www.sidefx.com/faq/question/511/)
+or maybe try [this specific linux FAQ question.](https://www.sidefx.com/faq/question/511/) The default installation options and location being in `/opt/` should be fine. Don’t forget to delete the installer after you’re done.
 
-The default installation options and location being in `/opt/` should be fine. Don’t forget to delete the installer after you’re done.
+### Nuke (Optional)
+For Nuke it’s the exact same procedure, just unpack the downloaded file just as you did the houdini one with something like `tar -xvf nuke_download_file_name`. The only caveat is you’ll want to run the unpacked file in the folder you’ll want to install Nuke, so I just threw it in the /opt/ folder as well before running the installer. Don’t forget to delete the installer after. Once installed you can create an alias such as this one pointing wherever you ended up installing nuke `alias nk='/opt/Nuke/Nuke12.2v1/Nuke12.2 --nc'`
+
+### Resolve (Optional)
+Devinci Resolve officially supports CentOS only; however you can get it to work on Ubuntu and possibly other flavors such as Mint, through a little hackery. I highly recommend following this guide and script (that removes all the hackery needed, and makes it quick and simple) at https://www.danieltufvesson.com/makeresolvedeb. Once you've installed resolve, as with Nuke feel free to create an alias to launch resolve faster from your job environment, something such as `alias resolve='/opt/resolve/bin/resolve'`. If you're not comfortable with Resolve, there is also the option of using [Kdenlive.](https://kdenlive.org/en/) Though Kdenlive does do the trick, I highly recommend Resolve, it's Lite version is more than enough and offers UHD export, easy to use interface, and it's pretty lightweight.  
 
 ## Initial Setup
 Either clone or download the repository and place it somewhere of your choosing I recommend somewhere like `~/Scripts/houdini/env/`
@@ -23,11 +27,3 @@ Next pop open config.sh with your favorite text editor or simply use the build i
 * `$ARCHPATH` refers to the root directory where you want your archived jobs and shots to land if you choose to move them to say another hard drive.
 
 # (Update) Aug 17th, 2020 - Readme still in WIP progress
-
-## Extras
-
-### Nuke (Optional)
-For Nuke it’s the exact same procedure, just unpack the downloaded file just as you did the houdini one with something like `tar -xvf nuke_download_file_name`. The only caveat is you’ll want to run the unpacked file in the folder you’ll want to install Nuke, so I just threw it in the /opt/ folder as well before running the installer. Don’t forget to delete the installer after. Once installed you can create an alias such as this one pointing wherever you ended up installing nuke `alias nk='/opt/Nuke/Nuke12.2v1/Nuke12.2 --nc'`
-
-### Resolve (Optional)
-Devinci Resolve officially supports CentOS only; however you can get it to work on Ubuntu and possibly other flavors such as Mint, through a little hackery. I highly recommend following this guide and script (that removes all the hackery needed, and makes it quick and simple) at https://www.danieltufvesson.com/makeresolvedeb. Once you've installed resolve, as with Nuke feel free to create an alias to launch resolve faster from your job environment, something such as `alias resolve='/opt/resolve/bin/resolve'`. If you're not comfortable with Resolve, there is also the option of using [Kdenlive.](https://kdenlive.org/en/) Though Kdenlive does do the trick, I highly recommend Resolve, it's Lite version is more than enough and offers UHD export, easy to use interface, and it's pretty lightweight.  
