@@ -1,5 +1,11 @@
 #!/bin/bash
 
+# help check
+if [ "$1" == "-h" ] || [ "$1" == "--help" ]; then
+  echo "Usage: "jobcreate" [new job name]"
+  exit 0
+fi
+
 # Source config settings, point this at your config.sh file
 source $HOME/Scripts/houdini/env/config.sh
 
@@ -9,12 +15,6 @@ if [ $? -eq 0 ]; then
 else
     echo -e "\n-----CONFIG ERROR-----\nCannot find config.sh doublecheck the filepath \nand/or check config.sh for any typos"
     exit 0
-fi
-
-# help check
-if [ "$1" == "-h" ] || [ "$1" == "--help" ]; then
-  echo "Usage: "jobcreate" [new job name]"
-  exit 0
 fi
 
 JOB=${1?Error: no job name given}

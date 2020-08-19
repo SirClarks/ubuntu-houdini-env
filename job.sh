@@ -1,5 +1,11 @@
 #!/bin/bash
 
+# help check
+if [ "$1" == "-h" ] || [ "$1" == "--help" ]; then
+  echo "Usage: "job" [job name] [shotname]"
+  exit 0
+fi
+
 # Source config settings, point this at your config.sh file
 source $HOME/Scripts/houdini/env/config.sh
 
@@ -9,12 +15,6 @@ if [ $? -eq 0 ]; then
 else
     echo -e "\n-----CONFIG ERROR-----\nCannot find config.sh doublecheck the filepath \nand/or check config.sh for any typos"
     exit 0
-fi
-
-# help check
-if [ "$1" == "-h" ] || [ "$1" == "--help" ]; then
-  echo "Usage: "job" [job name] [shotname]"
-  exit 0
 fi
 
 # history check
@@ -38,7 +38,7 @@ fi
 
 # error check just in case for -l call error
 if [ -z "$JOB" ] || [ -z "$SHOT" ]; then
-  echo "JOB and/or SHOT is empty, something went wrong, please try again not using -l or check the scripts"
+  echo "JOB and/or SHOT is empty, something went wrong, most likely something went wrong when trying to use --last or -l. Try manually entering the job / shot. Otherwise please take a look at the scripts"
   exit 0
 fi
 
@@ -95,4 +95,5 @@ fi
 
 echo "job $JOB $SHOT" >> $UTILPATH/ENV/history.txt
 
+# keeps the shell window open
 $SHELL
