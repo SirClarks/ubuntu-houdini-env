@@ -7,8 +7,8 @@ This guide is aimed at those who are very new to the world of Linux and Ubuntu a
 ## Software download
 
 ### Houdini
-Make sure you download Houdini for Linux and follow the SideFX provided [https://www.sidefx.com/download/houdini-for-linux/](instructions)
-or maybe try [https://www.sidefx.com/faq/question/511/](this specific linux FAQ question)
+Make sure you download Houdini for Linux and follow the SideFX provided [instructions](https://www.sidefx.com/download/houdini-for-linux/)
+or maybe try [this specific linux FAQ question.](https://www.sidefx.com/faq/question/511/)
 
 The default installation options and location being in `/opt/` should be fine. Don’t forget to delete the installer after you’re done.
 
@@ -30,4 +30,4 @@ Next pop open config.sh with your favorite text editor or simply use the build i
 For Nuke it’s the exact same procedure, just unpack the downloaded file just as you did the houdini one with something like `tar -xvf nuke_download_file_name`. The only caveat is you’ll want to run the unpacked file in the folder you’ll want to install Nuke, so I just threw it in the /opt/ folder as well before running the installer. Don’t forget to delete the installer after. Once installed you can create an alias such as this one pointing wherever you ended up installing nuke `alias nk='/opt/Nuke/Nuke12.2v1/Nuke12.2 --nc'`
 
 ### Resolve (Optional)
-Devinci Resolve officially supports CentOS only; however you can get it to work on Ubuntu and possibly other flavors such as Mint, through a little hackery. I highly recommend following this guide and script (that removes all the hackery needed, and makes it quick and simple) at https://www.danieltufvesson.com/makeresolvedeb. Once you've installed resolve, as with Nuke feel free to create an alias to launch resolve faster from your job environment, something such as `alias resolve='/opt/resolve/bin/resolve'`. If you're not comfortable with Resolve, there is also the option of using [https://kdenlive.org/en/](Kdenlive). Though Kdenlive does do the trick, I highly recommend Resolve, it's Lite version is more than enough and offers UHD export, easy to use interface, and it's pretty lightweight.  
+Devinci Resolve officially supports CentOS only; however you can get it to work on Ubuntu and possibly other flavors such as Mint, through a little hackery. I highly recommend following this guide and script (that removes all the hackery needed, and makes it quick and simple) at https://www.danieltufvesson.com/makeresolvedeb. Once you've installed resolve, as with Nuke feel free to create an alias to launch resolve faster from your job environment, something such as `alias resolve='/opt/resolve/bin/resolve'`. If you're not comfortable with Resolve, there is also the option of using [Kdenlive.](https://kdenlive.org/en/) Though Kdenlive does do the trick, I highly recommend Resolve, it's Lite version is more than enough and offers UHD export, easy to use interface, and it's pretty lightweight.  
