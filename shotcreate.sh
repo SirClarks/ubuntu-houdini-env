@@ -35,7 +35,7 @@ if cd $JPATH; then
 		HPATH=$SPATH/houdini
 		NPATH=$SPATH/nuke
     RPATH=$SPATH/resolve
-		mkdir $HPATH $HPATH/hip $HPATH/hip/backup $HPATH/hip/log $HPATH/geo $HPATH/renders $HPATH/texture $HPATH/flipbook $HPATH/assets
+		mkdir $HPATH $HPATH/hip $HPATH/hip/backup $HPATH/hip/log $HPATH/geo $HPATH/renders $HPATH/texture $HPATH/flipbook $HPATH/assets $HPATH/texture/hdri $HPATH/ifd
 		mkdir $NPATH $NPATH/scene $NPATH/scene/backup $NPATH/renders
     mkdir $RPATH $RPATH/backup
   fi
