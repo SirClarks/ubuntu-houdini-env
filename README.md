@@ -1,5 +1,5 @@
 # ubuntu-houdini-env
-A simplified production-like home environment setup for houdini/nuke/resolve workflow on Linux (specifically Ubuntu 18.04/20.04). This is a quick and dirty setup; however, it should be a useful starting place for your own ideas and improvements.
+A simplified production-like home environment setup for houdini/nuke/resolve workflow on Linux (specifically Ubuntu 18.04/20.04). Though since this is in bash, it should work with most flavors of Linux (waiting to test on CentOs). For all intents and purposes, this is a quick and dirty setup; however, it should be a useful starting place for your own ideas and improvements.
 
 ## Introduction
 This guide is aimed at those who are very new to the world of Linux and Ubuntu as well as just in general fiddling with environment variables in Houdini.
@@ -26,4 +26,7 @@ Next pop open config.sh with your favorite text editor or simply use the build i
 * `$UTILPATH` refers to wherever you wish to save some useful information such as the job history log
 * `$ARCHPATH` refers to the root directory where you want your archived jobs and shots to land if you choose to move them to say another hard drive.
 
-# (Update) Aug 17th, 2020 - Readme still in WIP progress
+### envsetup.sh
+Coming soon
+
+# (Update) Aug 25th, 2020 - Readme still in WIP progress
