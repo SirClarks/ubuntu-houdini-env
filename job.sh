@@ -69,14 +69,14 @@ export GEO="$HPATH/houdini/geo/"
 export ASSETS="$HPATH/houdini/assets/"
 export RENDER="$HPATH/houdini/renders/"
 export TEXTURE="$HPATH/houdini/texture/"
-export HOUDINI_BACKUP_DIR="$HPATH/houdini/hip/backup"
+export FLIPBOOK="$HPATH/houdini/flipbook/"
 
 # set preferences
 export HOUDINI_NO_START_PAGE_SPLASH=1
 export HOUDINI_VERBOSE_ERROR=1
 export HOUDINI_DISABLE_SAVE_THUMB=1
 export HOUDINI_SIMPLIFIED_NODE_NAMES=1
-export HOUDINI_BACKUP_DIR="$HPATH/hip/backup/"
+export HOUDINI_BACKUP_DIR="$HPATH/houdini/hip/backup"
 
 # per job overrides
 if [ $JOB == 'rnd' ]
