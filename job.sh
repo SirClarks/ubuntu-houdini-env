@@ -81,7 +81,7 @@ export HOUDINI_BACKUP_DIR="$HPATH/houdini/hip/backup"
 # per job overrides
 if [ $JOB == 'rnd' ]
 then
-  # export HOUDINI_SPLASH_FILE="/media/$USER/data/FX/jobs/config/splash/caveman.png"
+  # export HOUDINI_SPLASH_FILE="path/to/your/splash/screen/img.jpg"
   export HOUDINI_SPLASH_MESSAGE="$JOB | $SHOT"
 else
   export HOUDINI_SPLASH_MESSAGE="$JOB | $SHOT"
