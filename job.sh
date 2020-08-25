@@ -70,6 +70,7 @@ export ASSETS="$HPATH/houdini/assets/"
 export RENDER="$HPATH/houdini/renders/"
 export TEXTURE="$HPATH/houdini/texture/"
 export FLIPBOOK="$HPATH/houdini/flipbook/"
+export IFD="$HPATH/houdini/ifd"
 
 # set preferences
 export HOUDINI_NO_START_PAGE_SPLASH=1
