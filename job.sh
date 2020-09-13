@@ -2,7 +2,7 @@
 
 # help check
 if [ "$1" == "-h" ] || [ "$1" == "--help" ]; then
-  echo "Usage: "job" [job name] [shotname]"
+  echo -e "Usage: "job" [job name] [shotname]\n\n--Additional arguments--\nList jobs: \n\tjob -list \n\tjob --list\nList jobs and shots: \n\tjob -listfull \n\tjob --listfull\nJob into last worked shot: \n\tjob -l -l \n\tjob -l \n\tjob --last\nShow job/shot history: \n\tjob -hh \n\tjob --history\nShow help: \n\tjob -h \n\tjob --help"
   exit 0
 fi
 
@@ -11,14 +11,45 @@ source $HOME/Scripts/houdini/env/config.sh
 
 # if error on source config
 if [ $? -eq 0 ]; then
-    echo "Config.sh loaded"
+    # echo "Config.sh loaded"
+    :
 else
     echo -e "\n-----CONFIG ERROR-----\nCannot find config.sh doublecheck the filepath \nand/or check config.sh for any typos"
     exit 0
 fi
 
+# list jobs
+if [ "$1" == "-list" ] || [ "$1" == "--list" ]; then
+  echo "Job List:"
+  IFS=$'\n'
+  projarray=( $(find $PROJPATH -mindepth 1 -maxdepth 1 -type d -printf '%f\n') )
+  for i in ${projarray[@]}
+  do
+    echo $i
+  done
+  exit 0
+fi
+
+# list jobs and shots
+if [ "$1" == "-listfull" ] || [ "$1" == "--listfull" ]; then
+  echo "Job/Shot List:"
+  IFS=$'\n'
+  projarray=( $(find $PROJPATH -mindepth 1 -maxdepth 1 -type d -printf '%f\n') )
+  for i in ${projarray[@]}
+  do
+    echo $i
+    temparray=( $(find $PROJPATH/$i -mindepth 1 -maxdepth 1 -type d -printf '%f\n') )
+    for j in ${temparray[@]}
+    do
+      echo -e "  $j"
+    done
+    unset temparray
+  done
+  exit 0
+fi
+
 # history check
-if [ "$1" == "-hh" ] || [ "$1" == "-history" ] || [ "$1" == "--history" ]; then
+if [ "$1" == "-hh" ] || [ "$1" == "--history" ]; then
   echo "Last 20 Shots: "
   echo "`tail -n 15 $UTILPATH/ENV/history.txt`"
   exit 0
@@ -27,7 +58,7 @@ fi
 # last job/shot load via history.txt else use the two typed arguments
 if [ "$1" == "-l" ] || [ "$1" == "-l -l" ] || [ "$1" == "--last" ]; then
   LAST=$( tail -n 1 $UTILPATH/ENV/history.txt )
-  echo "loading last shot: $LAST"
+  echo "Jobbing into last shot: $LAST"
   read -r -a array <<< "$LAST"
   JOB=${array[1]}
   SHOT=${array[2]}
