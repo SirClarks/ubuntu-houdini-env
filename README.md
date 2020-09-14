@@ -29,4 +29,4 @@ Next pop open config.sh with your favorite text editor or simply use the build i
 ### envsetup.sh
 Coming soon
 
-# (Update) Aug 25th, 2020 - Readme still in WIP progress
+# (Update) Sept 14: Sorry I'm still getting around to this, if you have any questions or need help setting this up, feel free to contact me directly
