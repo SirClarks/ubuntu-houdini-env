@@ -27,7 +27,7 @@ Next pop open config.sh with your favorite text editor or simply use the build i
 * `$ARCHPATH` refers to the root directory where you want your archived jobs and shots to land if you choose to move them to say another hard drive.
 
 ## Remaining setup
-The rest of this setup is simply changing file paths to match whatever you need, and creating aliases to the `job.sh`,`jobcreate.sh`,`shotcreate.sh`, and `jobarchive.sh` scripts. If you have any questions you probably know how to contact me, since it's most likely I've sent you here to look at it. If you need help and don't know how to contact me I recommend starting an issue and I'll try my best to respond.
+The rest of this setup is simply changing file paths to match whatever you need, and creating aliases to the `job.sh`,`jobcreate.sh`,`shotcreate.sh`, and `jobarchive.sh` scripts. If you have any questions, then you probably know how to contact me, since it's most likely I've sent you here to look at this. If you need help and don't know how to contact me I recommend that you create an issue titled something like "setup help" and I'll try my best to respond.
 
 # Typical Use
 * Create a new job, for example `jobcreate rnd`
