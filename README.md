@@ -29,8 +29,9 @@ Next pop open config.sh with your favorite text editor or simply use the build i
 ## Remaining setup
 The rest of this setup is simply changing file paths to match whatever you need, and creating aliases to the `job.sh`,`jobcreate.sh`,`shotcreate.sh`, and `jobarchive.sh` scripts. If you have any questions you probably know how to contact me, since it's most likely I've sent you here to look at it. If you need help and don't know how to contact me I recommend starting an issue and I'll try my best to respond.
 
+
 # Typical Use
 * Create a new job, for example `jobcreate rnd`
 * Create a new shot, using `shotcreate rnd sphere`
 * Now "job" into this, using `job rnd sphere`
-* Launch houdini, and all your environment variables should be set. For example $GEO will point at `/rnd/sphere/houdini/geo/`, etc. You can find all the variables in the `job.sh` script and change them as needed
+* Launch houdini, and all your environment variables should be set. For example $GEO will point at `/rnd/sphere/houdini/geo/`, etc. You can find all the variables in the `job.sh` script and change them as needed.
