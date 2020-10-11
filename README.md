@@ -39,3 +39,7 @@ The rest of this setup is simply changing file paths to match whatever you need,
 
 ### Help
 You can bring up help on any script using a `-h` or `--help` for example `job --help`
+
+### Useful Resources Ubuntu 20.04
+Here are some additional useful resources I've found for Ubuntu 20.04.
+* MATE for Ubuntu 20.04 - which seemed to be a popular choice over the default GNOME as a Desktop Environment:[How to install MATE desktop on Ubuntu 20.04](https://linuxconfig.org/how-to-install-mate-desktop-on-ubuntu-20-04-focal-fossa-linux)
