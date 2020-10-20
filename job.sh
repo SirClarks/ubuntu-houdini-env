@@ -31,7 +31,7 @@ if [ "$1" == "-list" ] || [ "$1" == "--list" ]; then
 fi
 
 # list jobs and shots
-if [ "$1" == "-listfull" ] || [ "$1" == "--listfull" || [ "$1" == "-lf" ]; then
+if [ "$1" == "-listfull" ] || [ "$1" == "--listfull" ] || [ "$1" == "-lf" ]; then
   echo "Job/Shot List:"
   IFS=$'\n'
   projarray=( $(find $PROJPATH -mindepth 1 -maxdepth 1 -type d -printf '%f\n') )
