@@ -1,4 +1,7 @@
-# Change this to the root directory where you want the root of the job/projects to be.
+# Change this to where you'd like to specify your root directory for FX work
+ROOTDIR=$HOME/FX/
+
+# Change this to where you want your jobs/projects to be located.
 PROJPATH=$HOME/FX/PROJECTS/
 
 # Change this to the houdini_setup_bash file provided by sidefx
