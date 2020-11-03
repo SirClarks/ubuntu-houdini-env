@@ -98,6 +98,7 @@ export FULLPATH=$HPATH
 export HIP="$HPATH/houdini/hip/"
 export GEO="$HPATH/houdini/geo/"
 export ASSETS="$HPATH/houdini/assets/"
+export GLOBALASSETS="$ROOTDIR/Assets"
 export RENDER="$HPATH/houdini/renders/"
 export TEXTURE="$HPATH/houdini/texture/"
 export FLIPBOOK="$HPATH/houdini/flipbook/"
