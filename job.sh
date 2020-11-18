@@ -103,6 +103,7 @@ export RENDER="$HPATH/houdini/renders/"
 export TEXTURE="$HPATH/houdini/texture/"
 export FLIPBOOK="$HPATH/houdini/flipbook/"
 export IFD="$HPATH/houdini/ifd"
+export LIBRARY="$HPATH/houdini/library/"
 
 # set preferences
 export HOUDINI_NO_START_PAGE_SPLASH=1
