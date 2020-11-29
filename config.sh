@@ -6,7 +6,7 @@ PROJPATH=$HOME/FX/PROJECTS/
 
 # Change this to the houdini_setup_bash file provided by sidefx
 # and edited following their commented instruction and/or this readme instructions.
-HENVPATH=$HOME/Scripts/houdini/env/houdini_setup_bash/houdini_setup_bash_18_6
+HENVPATH=$ROOTDIR/UTILITY/ENV/houdini_setup_bash_daily_build
 
 # Change this to the directory where you want utility paths such as logs to go too
 UTILPATH=$HOME/FX/UTILITY/
