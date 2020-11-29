@@ -111,6 +111,8 @@ export HOUDINI_VERBOSE_ERROR=1
 export HOUDINI_DISABLE_SAVE_THUMB=1
 export HOUDINI_SIMPLIFIED_NODE_NAMES=1
 export HOUDINI_BACKUP_DIR="$HPATH/houdini/hip/backup"
+export HOUDINI_OTLSCAN_PATH=$OTLPATH
+echo "Houdini OTLs path appended at: $OTLPATH"
 
 # per job overrides
 if [ $JOB == 'rnd' ]
