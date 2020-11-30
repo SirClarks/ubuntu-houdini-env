@@ -7,11 +7,12 @@ if [ "$1" == "-h" ] || [ "$1" == "--help" ]; then
 fi
 
 # Source config settings, point this at your config.sh file
-source $HOME/Scripts/houdini/env/config.sh
+source config.sh
 
 # if error on source config
 if [ $? -eq 0 ]; then
-    echo Config.sh loaded
+    # echo "Config.sh loaded"
+    :
 else
     echo -e "\n-----CONFIG ERROR-----\nCannot find config.sh doublecheck the filepath \nand/or check config.sh for any typos"
     exit 0
