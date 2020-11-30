@@ -6,8 +6,11 @@ if [ "$1" == "-h" ] || [ "$1" == "--help" ]; then
   exit 0
 fi
 
+# Set default directory, this will not function if using symlinks to call scripts
+SCRIPTDIR=$( cd "$(dirname "${BASH_SOURCE[0]}")" ; pwd -P )
+
 # Source config settings, point this at your config.sh file
-source config
+source $SCRIPTDIR/config
 
 # if error on source config
 if [ $? -eq 0 ]; then

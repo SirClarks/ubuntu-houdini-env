@@ -1,4 +1,11 @@
 #!/bin/bash
+
+# help check
+if [ "$1" == "-h" ] || [ "$1" == "--help" ]; then
+  echo -e "Usage simply edit this file to match where you want to setup your workspace"
+  exit 0
+fi
+
 # Change this to where you'd like to specify your root directory for FX work
 ROOTDIR=$HOME/FX/
 
