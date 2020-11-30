@@ -10,7 +10,7 @@ fi
 SCRIPTDIR=$( cd "$(dirname "${BASH_SOURCE[0]}")" ; pwd -P )
 
 # Source config settings, point this at your config.sh file
-source $SCRIPTDIR/config
+source $SCRIPTDIR/config_bash
 
 # if error on source config
 if [ $? -eq 0 ]; then
