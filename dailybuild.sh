@@ -1,0 +1,86 @@
+#!/bin/bash
+
+# help check
+if [ "$1" == "-h" ] || [ "$1" == "--help" ]; then
+  echo -e "Usage: dailybuild [path to houdini download houdini-...tar.gz]"
+  exit 0
+fi
+
+# Source config settings, point this at your config.sh file
+source config.sh
+
+# if error on source config
+if [ $? -eq 0 ]; then
+    # echo "Config.sh loaded"
+    :
+else
+    echo -e "\n-----CONFIG ERROR-----\nCannot find config.sh doublecheck the filepath \nand/or check config.sh for any typos"
+    exit 0
+fi
+
+# sudo/root check
+if (( $(id -u) != 0 )); then
+    echo "please run as root or with sudo"
+    exit 0
+fi
+
+# error check
+FPATH=${1?Error: no path to houdini tar.gz given}
+# echo "debug: path is: $FPATH"
+if [[ ! -e $FPATH ]]; then
+  echo -e "Could not locate $FPATH, please check file path and try again\nExample path: ~/Downloads/houdini-##.#.##-linux_x86_64_gcc6.3.tar.gz"
+  exit 0
+fi
+
+# create tmp directory we'll delete later
+TEMPDIR="/tmp/houdini_build_install"
+mkdir -p $TEMPDIR
+
+# extract archive
+if tar -xvf $FPATH -C $TEMPDIR --strip-components=1; then
+    echo "Successfully extracted $FPATH to $TEMPDIR"
+else
+    echo "Something went wrong, failed to extract archive, read above for possible insight into the issue"
+fi
+
+# prep install houdini
+FPATH=$TEMPDIR
+# echo "debug: updated path is: $FPATH"
+LICENSEDATE=`grep -F "LICENSE_DATE=" $FPATH/houdini.install`
+# echo "debug: license date is: $LICENSEDATE"
+LICENSEDATE=${LICENSEDATE: -11}
+LICENSEDATE=${LICENSEDATE:: -1}
+# echo "debug: edited license date is: $LICENSEDATE"
+
+# install houdini
+bash $FPATH/houdini.install --auto-install --install-menus --install-hfs-symlink --install-license --install-sidefxlabs --no-install-hqueue-server --no-install-engine-unity --no-install-engine-maya --no-install-bin-symlink --no-install-hqueue-client --accept-EULA $LICENSEDATE
+
+# clean up tmp directory
+rm -rf $TEMPDIR
+echo "Install compelete removed temp install directory"
+
+# update current houdini_setup_bash
+function update_bash_setup() {
+    # echo "yes no worked"
+    # echo `id -u`
+    VER_MAJOR=`grep -F "VER_MAJOR=" $FPATH/houdini.install`
+    VER_MAJOR=${VER_MAJOR: -2}
+    # echo "debug: edited version is: $VER_MAJOR"
+    VER_MINOR=`grep -F "VER_MINOR=" $FPATH/houdini.install`
+    VER_MINOR=${VER_MINOR: -1}
+    # echo "debug: edited version is: $VER_MINOR"
+    HSB="/opt/hfs$VER_MAJOR.$VER_MINOR/houdini_setup_bash"
+    echo "debug: HSB is: $HSB"
+    exit 0
+}
+
+read -p "Do you wish to update local houdini_setup_bash (y/n)? " answer
+case ${answer:0:1} in
+    y|Y|yes|ja|si|oui )
+        echo "not implemented yet, coming soon"
+        #update_bash_setup
+    ;;
+    * )
+        echo No
+    ;;
+esac

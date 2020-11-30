@@ -2,12 +2,12 @@
 
 # help check
 if [ "$1" == "-h" ] || [ "$1" == "--help" ]; then
-  echo -e "Usage: "job" [job name] [shotname]\n\n--Additional arguments--\nList jobs: \n\tjob -list \n\tjob --list\nList jobs and shots: \n\tjob -listfull \n\tjob --listfull \n\tjob -lf \nJob into last worked shot: \n\tjob -l -l \n\tjob -l \n\tjob --last\nShow job/shot history: \n\tjob -hh \n\tjob --history\nShow help: \n\tjob -h \n\tjob --help"
+  echo -e "Usage: job [job name] [shotname]\n\n--Additional arguments--\nList jobs: \n\tjob -list \n\tjob --list\nList jobs and shots: \n\tjob -listfull \n\tjob --listfull \n\tjob -lf \nJob into last worked shot: \n\tjob -l -l \n\tjob -l \n\tjob --last\nShow job/shot history: \n\tjob -hh \n\tjob --history\nShow help: \n\tjob -h \n\tjob --help"
   exit 0
 fi
 
 # Source config settings, point this at your config.sh file
-source $HOME/Scripts/houdini/env/config.sh
+source config.sh
 
 # if error on source config
 if [ $? -eq 0 ]; then
@@ -73,6 +73,8 @@ if [ -z "$JOB" ] || [ -z "$SHOT" ]; then
   exit 0
 fi
 
+
+
 # set main path
 HPATH=$PROJPATH/$JOB/$SHOT/
 
@@ -126,7 +128,7 @@ fi
 # write to file for history
 if [[ ! -e $UTILPATH/ENV/history.txt ]]; then
   mkdir -p $UTILPATH/ENV/ && touch $UTILPATH/ENV/history.txt
-  echo "no history log found, created log at $HOME/FX/UTILITY/ENV/history.txt"
+  echo "no history log found, created log at $UTILPATH/ENV/history.txt"
 fi
 
 echo "job $JOB $SHOT" >> $UTILPATH/ENV/history.txt
