@@ -1,3 +1,4 @@
+#!/bin/bash
 # Change this to where you'd like to specify your root directory for FX work
 ROOTDIR=$HOME/FX/
 

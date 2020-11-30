@@ -7,7 +7,7 @@ if [ "$1" == "-h" ] || [ "$1" == "--help" ]; then
 fi
 
 # Source config settings, point this at your config.sh file
-source config.sh
+source config
 
 # if error on source config
 if [ $? -eq 0 ]; then
