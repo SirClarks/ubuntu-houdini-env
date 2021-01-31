@@ -1,5 +1,9 @@
 #!/bin/bash
 
+# this probably no longer works as intended due to multidrive satup,
+# and honestly, I haven't used the feature much at all, though leaving it up
+# for future reference
+
 # help check
 if [ "$1" == "-h" ] || [ "$1" == "--help" ]; then
   echo "Usage: "archivejob" [job name] "
