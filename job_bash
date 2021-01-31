@@ -2,7 +2,7 @@
 
 # help check
 if [ "$1" == "-h" ] || [ "$1" == "--help" ]; then
-  echo -e "Usage: job [job name] [shotname]\n\n--Additional arguments--\nList jobs: \n\tjob -list \n\tjob --list\nList jobs and shots: \n\tjob -listfull \n\tjob --listfull \n\tjob -lf \nJob into last worked shot: \n\tjob -l -l \n\tjob -l \n\tjob --last\nShow job/shot history: \n\tjob -hh \n\tjob --history\nShow help: \n\tjob -h \n\tjob --help"
+  echo -e "Usage: job [job name] [shotname]\n\n--Additional arguments--\nList jobs: \n\tjob -list \n\tjob --list \n\tjob --jl\nList jobs and shots: \n\tjob -listfull \n\tjob --listfull \n\tjob -lf \nJob into last worked shot: \n\tjob -l -l \n\tjob -l \n\tjob --last\nShow job/shot history: \n\tjob -hh \n\tjob --history\nShow help: \n\tjob -h \n\tjob --help \nJob in using alternative enviornemnt \n\tjob [job] [shot] --alt"
   exit 0
 fi
 
@@ -22,7 +22,7 @@ else
 fi
 
 # list jobs
-if [ "$1" == "-list" ] || [ "$1" == "--list" ]; then
+if [ "$1" == "-list" ] || [ "$1" == "--list" ] || [ "$1" == "-jl" ]; then
   echo "Job List:"
   IFS=$'\n'
   projarray=( $(find $PROJPATH -mindepth 1 -maxdepth 1 -type d -printf '%f\n') )
@@ -80,9 +80,13 @@ fi
 
 # set main path
 HPATH=$PROJPATH/$JOB/$SHOT/
+HPATH2=$PROJPATH2/$JOB/$SHOT/
 
 if cd $HPATH; then
-  echo "Entering $JOB/$SHOT"
+  echo -e "\n----Success---\nEntering $JOB/$SHOT"
+elif cd $HPATH2; then
+  echo -e "\n----Success---\nEntering $JOB/$SHOT"
+  HPATH=$HPATH2;
 else
   echo "Could not find job/shot, run jobcreate or shotcreate if needed" 1>&2
   exit 1
@@ -93,7 +97,12 @@ echo "Shot set to: $SHOT"
 echo "Project path set to: $HPATH"
 
 # set env
-source $HENVPATH
+if [ "$3" == "-alt" ]; then
+  echo "Using alternative enviornment"
+  source $HENVPATH2
+else
+  source $HENVPATH
+fi
 
 # set variable paths
 export SHOT=$SHOT

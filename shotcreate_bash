@@ -2,7 +2,7 @@
 
 # help check
 if [ "$1" == "-h" ] || [ "$1" == "--help" ]; then
-  echo "Usage: "shotcreate" [name of job] [new shot name]"
+  echo -e "Usage: shotcreate [existing job] [new shot name]\n\n--Additional arguments--\nCreate shot in alternative drive: \n\tshotcreate [existing job] [new shot name] -alt"
   exit 0
 fi
 
@@ -24,6 +24,10 @@ fi
 # A lot of optionals here just go through and edit for what you need.
 # For example there are a lot of directories related to Nuke/Resolve or
 # other more specific directories such as hip/log.
+
+if [ "$3" == "-alt" ]; then
+  PROJPATH=$PROJPATH2
+fi
 
 JOB=${1?Error: no job name given}
 SHOT=${2?Error: no shot name given}

@@ -2,7 +2,7 @@
 
 # help check
 if [ "$1" == "-h" ] || [ "$1" == "--help" ]; then
-  echo "Usage: "jobcreate" [new job name]"
+  echo -e "Usage: jobcreate [new job name]\n\n--Additional arguments--\nCreate job in alternative drive: \n\tcreatejob [new job name] -alt "
   exit 0
 fi
 
@@ -19,6 +19,10 @@ if [ $? -eq 0 ]; then
 else
     echo -e "\n-----CONFIG ERROR-----\nCannot find config.sh doublecheck the filepath \nand/or check config.sh for any typos"
     exit 0
+fi
+
+if [ "$2" == "-alt" ]; then
+  PROJPATH=$PROJPATH2
 fi
 
 JOB=${1?Error: no job name given}

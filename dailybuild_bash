@@ -56,7 +56,10 @@ LICENSEDATE=${LICENSEDATE:: -1}
 # echo "debug: edited license date is: $LICENSEDATE"
 
 # install houdini
-bash $FPATH/houdini.install --auto-install --install-menus --install-hfs-symlink --install-license --install-sidefxlabs --no-install-hqueue-server --no-install-engine-unity --no-install-engine-maya --no-install-bin-symlink --no-install-hqueue-client --accept-EULA $LICENSEDATE
+bash $FPATH/houdini.install --auto-install --install-menus --install-hfs-symlink --install-license --install-sidefxlabs --no-install-hqueue-server --install-engine-unity --no-install-engine-maya --no-install-bin-symlink --no-install-hqueue-client --accept-EULA $LICENSEDATE
+
+# non-engine install
+# bash $FPATH/houdini.install --auto-install --install-menus --install-hfs-symlink --install-license --install-sidefxlabs --no-install-hqueue-server --no-install-engine-unity --no-install-engine-maya --no-install-bin-symlink --no-install-hqueue-client --accept-EULA $LICENSEDATE
 
 # clean up tmp directory
 rm -rf $TEMPDIR
