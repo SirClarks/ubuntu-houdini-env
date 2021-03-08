@@ -6,20 +6,21 @@ if [ "$1" == "-h" ] || [ "$1" == "--help" ]; then
   exit 0
 fi
 
+# removed this as strictly not necessary in this script
 # Set default directory, this will not function if using symlinks to call scripts
-SCRIPTDIR=$( cd "$(dirname "${BASH_SOURCE[0]}")" ; pwd -P )
+# SCRIPTDIR=$( cd "$(dirname "${BASH_SOURCE[0]}")" ; pwd -P )
 
 # Source config settings, point this at your config.sh file
-source $SCRIPTDIR/config_bash
+# source $SCRIPTDIR/config_bash
 
 # if error on source config
-if [ $? -eq 0 ]; then
+# if [ $? -eq 0 ]; then
     # echo "Config.sh loaded"
     :
-else
-    echo -e "\n-----CONFIG ERROR-----\nCannot find config.sh doublecheck the filepath \nand/or check config.sh for any typos"
-    exit 0
-fi
+# else
+    # echo -e "\n-----CONFIG ERROR-----\nCannot find config.sh doublecheck the filepath \nand/or check config.sh for any typos"
+    # exit 0
+# fi
 
 # sudo/root check
 if (( $(id -u) != 0 )); then
@@ -56,14 +57,14 @@ LICENSEDATE=${LICENSEDATE:: -1}
 # echo "debug: edited license date is: $LICENSEDATE"
 
 # install houdini
-bash $FPATH/houdini.install --auto-install --install-menus --install-hfs-symlink --install-license --install-sidefxlabs --yes-install-hqueue-server --install-engine-unity --no-install-engine-maya --install-engine-unreal --no-install-bin-symlink --yes-install-hqueue-client --accept-EULA $LICENSEDATE
+bash $FPATH/houdini.install --auto-install --install-menus --install-hfs-symlink --install-license --install-sidefxlabs --no-install-hqueue-server --install-engine-unity --no-install-engine-maya --install-engine-unreal --no-install-bin-symlink --no-install-hqueue-client --accept-EULA $LICENSEDATE
 
 # non-engine install
 # bash $FPATH/houdini.install --auto-install --install-menus --install-hfs-symlink --install-license --install-sidefxlabs --no-install-hqueue-server --no-install-engine-unity --no-install-engine-maya --no-install-bin-symlink --no-install-hqueue-client --accept-EULA $LICENSEDATE
 
 # clean up tmp directory
 rm -rf $TEMPDIR
-echo "Install compelete removed temp install directory"
+echo "Install compeleted, removed temp install directory"
 
 # update current houdini_setup_bash
 function update_bash_setup() {
@@ -80,13 +81,14 @@ function update_bash_setup() {
     exit 0
 }
 
-read -p "Do you wish to update local houdini_setup_bash (y/n)? " answer
-case ${answer:0:1} in
-    y|Y|yes|ja|si|oui )
-        echo "not implemented yet, coming soon"
-        #update_bash_setup
-    ;;
-    * )
-        echo No
-    ;;
+# removed for now as not necessary.
+# read -p "Do you wish to update local houdini_setup_bash (y/n)? " answer
+# case ${answer:0:1} in
+    # y|Y|yes|ja|si|oui )
+        # echo "not implemented yet, coming soon"
+        # update_bash_setup
+    # ;;
+    # * )
+        # echo No
+    # ;;
 esac
