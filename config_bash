@@ -10,6 +10,9 @@ fi
 ROOTDIR=$HOME/FX/
 ROOTDIR2=/mnt/quad/FX2/
 
+# Special case where you would like to use a server instead of the regular directories in this case using sjob instead of job
+SERVERDIR=/mnt/hq/projects/
+
 # Change this to where you want your jobs/projects to be located.
 PROJPATH=$HOME/FX/PROJECTS/
 PROJPATH2=/mnt/quad/FX2/PROJECTS2/
