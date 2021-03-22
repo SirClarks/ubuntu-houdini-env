@@ -79,10 +79,9 @@ if [ -z "$JOB" ] || [ -z "$SHOT" ]; then
   exit 0
 fi
 
-
-
 # set main path
 HPATH=$PROJPATH/$JOB/$SHOT/
+JPATH=$PROJPATH/$JOB/
 
 if cd $HPATH; then
   echo -e "\n----Success---\nEntering $JOB/$SHOT"
@@ -108,7 +107,7 @@ fi
 
 # set variable paths
 export SHOT=$SHOT
-export JOB=$HPATH
+export JOB=$JPATH
 export USER=$USER
 
 # set preferences
@@ -117,9 +116,9 @@ export HOUDINI_VERBOSE_ERROR=1
 export HOUDINI_DISABLE_SAVE_THUMB=1
 export HOUDINI_SIMPLIFIED_NODE_NAMES=1
 # export HOUDINI_BACKUP_DIR="$HPATH/houdini/hip/backup"
-export HOUDINI_OTLSCAN_PATH=$HPATH/build/otls/
+export HOUDINI_OTLSCAN_PATH="$HPATH/build/otls/;&"
 echo "Houdini OTLs path appended at: $HOUDINI_OTLSCAN_PATH"
-echo "WORKING ON THE SERVER at: $HPATH"
+echo "WORKING ON THE SERVER at: $JPATH"
 
 # keeps the shell window open
 $SHELL

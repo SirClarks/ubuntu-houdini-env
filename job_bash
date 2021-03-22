@@ -88,6 +88,7 @@ elif cd $HPATH2; then
   echo -e "\n----Success---\nEntering $JOB/$SHOT"
   HPATH=$HPATH2
 	PROJPATH=$PROJPATH2
+	JPATH=$PROJPATH/$JOB/
 else
   echo "Could not find job/shot, run jobcreate or shotcreate if needed" 1>&2
   exit 1
@@ -110,7 +111,7 @@ fi
 
 # set variable paths
 export SHOT=$SHOT
-export JOB=$HPATH
+export JOB=$JPATH
 export USER=$USER
 
 # set preferences
@@ -121,7 +122,7 @@ export HOUDINI_SIMPLIFIED_NODE_NAMES=1
 # export HOUDINI_BACKUP_DIR="$HPATH/houdini/hip/backup"
 export HOUDINI_OTLSCAN_PATH=$OTLPATH
 echo "Houdini OTLs path appended at: $OTLPATH"
-echo "Working Locally at: $HPATH"
+echo "Working Locally at: $JPATH"
 
 # per job overrides
 if [ $LOGJOB == 'rnd' ]

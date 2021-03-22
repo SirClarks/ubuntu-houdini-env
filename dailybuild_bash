@@ -67,19 +67,15 @@ rm -rf $TEMPDIR
 echo "Install compeleted, removed temp install directory"
 
 # update current houdini_setup_bash
-function update_bash_setup() {
-    # echo "yes no worked"
-    # echo `id -u`
-    VER_MAJOR=`grep -F "VER_MAJOR=" $FPATH/houdini.install`
-    VER_MAJOR=${VER_MAJOR: -2}
-    # echo "debug: edited version is: $VER_MAJOR"
-    VER_MINOR=`grep -F "VER_MINOR=" $FPATH/houdini.install`
-    VER_MINOR=${VER_MINOR: -1}
-    # echo "debug: edited version is: $VER_MINOR"
-    HSB="/opt/hfs$VER_MAJOR.$VER_MINOR/houdini_setup_bash"
-    echo "debug: HSB is: $HSB"
-    exit 0
-}
+# function update_bash_setup() {
+    # VER_MAJOR=`grep -F "VER_MAJOR=" $FPATH/houdini.install`
+    # VER_MAJOR=${VER_MAJOR: -2}
+    # VER_MINOR=`grep -F "VER_MINOR=" $FPATH/houdini.install`
+    # VER_MINOR=${VER_MINOR: -1}
+    # HSB="/opt/hfs$VER_MAJOR.$VER_MINOR/houdini_setup_bash"
+    # echo "debug: HSB is: $HSB"
+    # exit 0
+# }
 
 # removed for now as not necessary.
 # read -p "Do you wish to update local houdini_setup_bash (y/n)? " answer
@@ -91,4 +87,4 @@ function update_bash_setup() {
     # * )
         # echo No
     # ;;
-esac
+# esac
